@@ -1,0 +1,147 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1850" d:DesignHeight="450"
+        x:Class="dem03.Services"
+        Icon="beauty_logo.png"
+		FontFamily="Segoe UI"
+		x:CompileBindings="False"
+        Title="Услуги">
+
+
+
+	<Grid ColumnDefinitions="*,*,*"
+		  RowDefinitions="*,12*,*"
+		  ShowGridLines="False">
+
+		<TextBox Name="SearchVoid"
+				 Grid.ColumnSpan="2"
+				 Grid.Row="0"
+				 TextChanged="TextBox_TextChanged"
+				 FontWeight="Bold"
+				 FontStyle="Normal"
+				 BorderThickness="2"
+				 Watermark="Поиск по: Названию услуги"
+				 Margin="50 25 555 0"
+				 Height="45"
+				 Background="#FF4A6D"/>
+
+
+		<DockPanel Grid.Column="2"
+				   Grid.Row="0"
+				   HorizontalAlignment="Right"
+				   VerticalAlignment="Bottom">
+
+			<ComboBox Name="BoxOne"
+					  Width="250"
+					  Height="40"
+					  SelectedIndex="0"
+					  Margin="0 0 10 0"
+					  Background="#FF4A6D">
+				<ComboBoxItem>Сортировка</ComboBoxItem>
+				<ComboBoxItem>Цена по возврастанию</ComboBoxItem>
+				<ComboBoxItem>Цена по убыванию</ComboBoxItem>
+
+			</ComboBox>
+			<ComboBox Name="BoxTwo"
+					  Width="250"
+					  Height="40"
+					  SelectedIndex="0"
+					  Margin="0 0 50 0"
+				  Background="#FF4A6D">
+				<ComboBoxItem>Все  диапазоны</ComboBoxItem>
+				<ComboBoxItem>По скидке в 0-5%</ComboBoxItem>
+				<ComboBoxItem>По скидке в 5-15%</ComboBoxItem>
+				<ComboBoxItem>По скидке в 15-30%</ComboBoxItem>
+				<ComboBoxItem>По скидке в 30-70%</ComboBoxItem>
+				<ComboBoxItem>По скидке в 70-100%</ComboBoxItem>
+
+			</ComboBox>
+
+			<TextBlock
+					Name="RecordCountText"
+				    Text="Записей Выведено:"
+					Margin="30"
+				     Height="25"
+				     Width="1000"
+					 FontWeight="Bold"
+				 FontStyle="Normal"
+					FontSize="17"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Top"/>
+
+			<Button Grid.Column="0"
+        Grid.Row="0"
+        Content="КУ"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Height="35"
+        Width="35"
+        Click="Button_EditClick"
+				/>
+
+		</DockPanel>
+		<ListBox Grid.ColumnSpan="3"
+				 Grid.Row="1"
+				 Margin="50 10 50 10"
+				 Name="Listbox_MainWindow"
+				 Background="#e1e4ff"
+				 BorderThickness="1">
+			<ListBox.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="Редактировать" Click="MenuItem_Click"/>
+					<MenuItem Header="Удалить" Click="MenuItem_Delete_Click"/>
+				</ContextMenu>
+			</ListBox.ContextMenu>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+						<Grid  ColumnDefinitions="220,1320,220"
+							   RowDefinitions="30,120,70"
+							   ShowGridLines="False">
+
+							<Image Grid.Column="0"
+								   Grid.RowSpan="3"
+								   Source="{Binding Photopath}"/>
+
+							<TextBlock Grid.Column="1"
+                      Grid.RowSpan="3"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="5 0 0 0"
+                      FontWeight="Bold"
+					  TextWrapping="Wrap"
+                      Text="{Binding Discount}"
+									   />
+
+
+							<TextBlock Grid.Column="1"
+									   Grid.Row="0"
+									   HorizontalAlignment="Left"
+									   VerticalAlignment="Bottom"
+									   Margin="5 0 0 0"
+									   FontWeight="Bold"
+									   Text="{Binding Name}"/>
+
+							<TextBlock Grid.Column="1"
+									   Grid.Row="2"
+									   HorizontalAlignment="Left"
+									   VerticalAlignment="Top"
+									   FontWeight="Bold"
+									   TextWrapping="Wrap"
+									   Margin="5 0 0 0" Text="{Binding Cost}"/>
+
+							<TextBlock Grid.Column="1"
+									   Grid.Row="2"
+									   HorizontalAlignment="Left"
+									   VerticalAlignment="Top"
+									   FontWeight="Bold"
+									   TextWrapping="Wrap"
+									   Margin="5 20 0 0" Text="{Binding Dlitelnost}"/>
+						</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+
+</Window>

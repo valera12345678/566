@@ -1,0 +1,66 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="dem03.AddEditWindow"
+		x:CompileBindings="False"
+		Icon="beauty_logo.png"
+       Title="Добавление/Редактирование">
+	<StackPanel Width="300"
+				Name="да">
+		<TextBox
+				 Watermark="Наименование"
+				 Width="300"
+				 Text="{Binding Name}"
+				 Background="#e1e4ff"/>
+		<TextBox
+				 Width="300"
+				 Watermark="Цена"
+				 Text="{Binding Cost}"
+				 Background="#e1e4ff"/>
+		<TextBox
+				 Width="300"
+				 Watermark="Длительность"
+				 Text="{Binding Dlitelnost}"
+				 Background="#e1e4ff"/>
+		<TextBox
+				 Width="300"
+				 Watermark="Скидка"
+				 Text="{Binding Discount}"
+				 Background="#e1e4ff"/>
+		<TextBox
+				 Width="300"
+				 Watermark="Фото"
+				 Text="{Binding Photopath}"
+				 Background="#e1e4ff"/>
+
+		<Button Grid.Column="1"
+				Grid.Row="2"
+				Click="Button_Click_2"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				Height="35"
+				Margin="25"
+				Width="250"
+			Background="#FF4A6D">
+			<TextBlock Text="Сохранить"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center" />
+		</Button>
+
+		<Button Grid.Column="1"
+				Grid.Row="2"
+				Background="#FF4A6D"
+				Click="Button_Click_1"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Bottom"
+				Margin="5"
+				Height="35"
+				Width="250">
+			<TextBlock Text="Отмена"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center" />
+		</Button>
+	</StackPanel>
+</Window>

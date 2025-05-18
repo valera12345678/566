@@ -3,25 +3,81 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="dem03.MainWindow"
-        Title="Авторизация"
-		Icon="beauty_logo.png">
+        x:Class="demo3103.MainWindow"
+        Title="demo3103"
+		x:CompileBindings="False"
+		FontFamily="Segoe Print">
+	<Grid ColumnDefinitions="*"
+			  RowDefinitions="*,*,*"
+			  ShowGridLines="False">
+	
+		<ListBox
+			Grid.ColumnSpan="3"
+			Grid.Row="0"
+			Margin="10 10 70 -250"
+			Name="Listbox_Partner"
+			BorderThickness="2"
+			Background="#F4E8D3">
+			<ListBox.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="Редактировать" Click="MenuItem_Click"/>
+					<MenuItem Header="Удалить" Click=""/>
+				</ContextMenu>
+			</ListBox.ContextMenu>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock
+							Text="{Binding Discount}"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Right"
+							Margin="-350 0 0 0">
+						</TextBlock>
+						<TextBlock
+					Text="Тип:">
+						</TextBlock>
+						<TextBlock
+					Text="|"
+					Margin="90 -25 0 0">
+						</TextBlock>
+						<TextBlock
+				Text="{Binding Type}"
+				Margin="35 -25 0 0">
+						</TextBlock>
+						<TextBlock
+					Text="Наименование:"
+					Margin="100 -25 0 0">
+						</TextBlock>
+						<TextBlock
+					Text="{Binding Name}"
+					Margin="209 -25 0 0">
+						</TextBlock>
+						<TextBlock
+					Text="Директор:">
+						</TextBlock>
+						<TextBlock
+					Text="{Binding Director}"
+					Margin="85 -25 0 0">
+						</TextBlock>
+						<TextBlock
+					Text="Рейтинг:">
+						</TextBlock>
+						<TextBlock
+				Text="{Binding Rating}"
+				Margin="68 -25 0 0">
+						</TextBlock>
+						<TextBlock
+				Text="Телефон:">
+						</TextBlock>
+						<TextBlock
+				Text="{Binding Phone}"
+				Margin="65 -25 0 0">
+						</TextBlock>
 
-	<Grid>
-
-
-		<TextBox HorizontalAlignment="Center" VerticalAlignment="Top"
-				 Margin="0, 130, 0, 0" Name="Password" Width="200" Watermark="Password"
-				 PasswordChar="*" Background="#e1e4ff">
-
-		</TextBox>
-
-		<Button VerticalAlignment="Center" HorizontalAlignment="Center"
-				Margin="0, 0, 0, 50" Height="30" Width="100" Content="Вход"
-				HorizontalContentAlignment="Center" Click="LogClick"
-				Background="#FF4A6D">
-
-		</Button>
-		
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
 	</Grid>
 </Window>
+	

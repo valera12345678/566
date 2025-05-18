@@ -1,0 +1,1 @@
+public Bitmap Photopath => Photo != null ? new Bitmap($@"assets\\{Photo}") : null;
